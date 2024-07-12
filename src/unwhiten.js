@@ -17,6 +17,12 @@ function bytesToHex(bytes) {
     return hex.join("");
 }
 
+var hexChar = ["0", "1", "2", "3", "4", "5", "6", "7","8", "9", "a", "b", "c", "d", "e", "f"];
+
+function byteToHex(b) {
+  return hexChar[(b >> 4) & 0x0f] + hexChar[b & 0x0f];
+}
+
 const XBOXES = [
   0xB7, 0xFD, 0x93, 0x26, 0x36, 0x3F, 0xF7, 0xCC,
   0x34, 0xA5, 0xE5, 0xF1, 0x71, 0xD8, 0x31, 0x15,
@@ -39,32 +45,48 @@ const XBOXES = [
 function unwhiten(buf, size, seed) {
   const res = [];
   for (let i = 0; i < size; i++) {
+let xbPos = (seed+i+9) & 0x1f;
+let xb = XBOXES[xbPos];
+
+    //console.log(`Position - ${i}, xboxes Pos - ${xbPos}, xbox - ${xb}`);
+    //console.log(`step 0 - ${buf[i].toString(16)}`);
     res[i] = buf[i] ^ XBOXES[(seed + i + 9) & 0x1f];
+    //console.log(`step 1 - ${res[i].toString(16)}`);
     res[i] ^= seed;
+    //console.log(`step 2 - ${res[i].toString(16)}`);
     res[i] &= 0xff;
+    //console.log(`step 3 - ${res[i].toString(16)}`);
   }
   return res;
 }
 
-let args = process.argv.slice(2);
-let bytesArray = hexToBytes(args[0]);
-let seed = bytesArray.slice(bytesArray.length-2);
-let data = bytesArray.slice(10, 28);
-let seedInt =  (((seed[0] & 0xFF) << 8) | (seed[1] & 0xFF));
 
-console.log(seedInt);
+function ProcessData(rawData) {
 
-console.log(seed);
-console.log(data);
+let cleanedData = rawData.replace(/[^a-f0-9]/i, '');
+
+let bytesArray = hexToBytes(cleanedData);
+let seed = bytesArray.slice(bytesArray.length-4,bytesArray.length-2);
+let data = bytesArray.slice(9, 27);
+let seedInt =  (((seed[1] & 0xFF) << 8) | (seed[0] & 0xFF));
+
+//console.log(seedInt);
+
+//console.log(`Seed - ${bytesToHex(seed.reverse())}`);
+
+//console.log(seed);
+//console.log(data);
 
 let cleanData = unwhiten(data,data.length, seedInt)
 
 
-console.log(bytesArray);
+//console.log(bytesArray);
 
-console.log(cleanData);
+//console.log(cleanData);
 
+return bytesToHex(cleanData);
 
+}
 
 
 //console.log(args[0]);
