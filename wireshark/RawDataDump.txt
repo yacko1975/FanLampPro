@@ -1,0 +1,44 @@
+Service Data: 10 00 f6 88 84 35 77 c2 7e db 23 bb f2 e6 66 cf 26 22 1a d0 17 ea 35 63
+Service Data: 10 00 f1 03 a2 ec d0 d9 bd 2a e2 d0 21 b0 f0 e4 64 77 94 00 15 b8 65 ba
+Service Data: 10 00 32 14 f0 5d e6 7e 1b 46 a2 4b 99 17 84 1b 86 5a ad 63 81 0b b9 b6
+Service Data: 10 00 32 15 f0 5d e6 7e 1b 46 a2 4b 99 17 84 1b 86 28 1e 63 81 0b ae 5b
+Service Data: 10 00 a5 15 da 37 41 ec 5b 21 c1 13 94 07 98 05 10 3b ac e9 02 17 4c 1c
+Service Data: 10 00 34 97 92 9f 01 28 9b c7 8d ea 56 46 4f 87 bc 31 f7 95 70 a1 6e bb
+Service Data: 10 00 13 43 9e 8a d1 a5 ea 8c 1d 54 49 c9 60 89 ad ff fb 9b b8 50 5f 9b
+Service Data: 10 00 e2 40 3c aa 9a 2f 97 9c 5b 90 d3 bd 08 18 11 d9 54 1a 2e d4 22 1b
+Service Data: 10 00 f6 80 84 35 77 c2 7e db 23 bb f2 e6 66 cf 26 60 21 d0 17 ea 16 94
+Service Data: 10 00 13 6e 11 95 6e 3b 6b e4 27 ca 23 f8 76 e5 7a a5 24 60 e0 42 20 d1
+Service Data: 10 00 33 49 31 b5 4e 1b 4b c4 07 ea 03 d8 56 c5 5a 54 23 40 c0 85 18 1b
+Service Data: 10 00 33 48 31 b5 4e 1b 4b c4 07 ea 03 d8 56 c5 5a 3c 37 40 c0 85 a0 0f
+Service Data: 10 00 f6 84 84 35 77 c2 7e db 23 bb f2 e6 66 cf 26 4c 96 d0 17 ea 6a ff
+Service Data: 10 00 34 9f 92 9f 01 28 9b c7 8d ea 56 46 4f 87 bc 8e 94 95 70 a1 99 a2
+Service Data: 10 00 13 75 11 95 6e 3b 6b e4 27 ca 23 f8 76 e5 7a 5c c8 60 e0 42 b1 5f
+Service Data: 10 00 32 01 f0 5d e6 7e 1b 46 a2 4b 99 17 84 1b 86 e3 5d 63 81 0b eb 09
+Service Data: 10 00 35 d9 90 6c af 53 33 2d 84 64 49 58 9b 7f 9f 67 49 59 5c a8 fc 52
+Service Data: 10 00 e2 5a 3c aa 9a 2f 97 9c 5b 90 d3 bd 08 18 11 0d 98 1a 2e d4 2c 55
+Service Data: 10 00 e2 5d 3c aa 9a 2f 97 9c 5b 90 d3 bd 08 18 11 34 a9 1a 2e d4 fc 91
+
+
+
+
+02 01 02 1b 16 f0 08 10 00 
+e2 5d 3c aa 9a 2f 97 9c 5b 90 d3 bd 08 18 11 34 a9 1a 2e d4 
+fc 91
+
+
+unwhiten data
+https://github.com/aronsky/esphome-components/issues/5
+
+
+1000f688843577c27edb23bbf2e666cf26221ad017ea3563
+
+
+0201021b16f0081000e25d3caa9a2f979c5b90d3bd08181134a91a2ed4fc91
+
+
+Example Data:
+
+0201011B03F0081080D1A2BA779E709EAEC25F676EA69D65F4B4A051A89AC8
+
+Result:
+00 11 00 01 7d 54 78 02 00 28 00 00 00 00 00 00 00 00
