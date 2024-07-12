@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decode BLE packets for FanLamp Pro and LampSmart Pro</title>
+</head>
+
+<body>
+
+<h1>Unwhitten ble packets</h1>
+
+<p>This will decode the BLE packets that are sent using the apps such as <a href="https://play.google.com/store/apps/details?id=com.jingyuan.lamp">LampSmart Pro</a> 
+    and <a href="https://play.google.com/store/apps/details?id=com.jingyuan.fan_lamp">FanLamp Pro</a> and probably other software made by <a href="https://play.google.com/store/apps/developer?id=XuRenNan">XuRenNan</a>.  
+    This code is based off development by <a href="https://github.com/aronsky">Lev Aronsky</a> on his <a href="https://github.com/aronsky/esphome-components/tree/main/components/lampsmart_pro_light">home assistant application for the esphome</a>. 
+</p>
+
+
+<label for="rawPacket">Packet to decode</label>    
+<input type="text" id="rawPacket" size="100" >
+
+<br />
+<br />
+
+<button id="btnDecode">Decode Packet</button>
+
+<br />
+<br />
+
+<label for="DecodedPacket">Decoded packet payload</label>
+<input type="text" id="DecodedPacket" size="100">
+
+
+<script type="text/javascript" src="unwhiten.js" ></script>
+
+<script type="text/javascript">
+
+document.getElementById('btnDecode').addEventListener('click', ()=>{
+    let result = ProcessData(document.getElementById('rawPacket').value);        
+            console.log(result);
+            document.getElementById('DecodedPacket').value =result;
+        });
+
+
+
+</script>
+
+</body>
+</html>
